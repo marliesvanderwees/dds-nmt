@@ -1,2 +1,2 @@
 # dynamic-data-selection
-Dynamic data selection for neural machine translation
+Coming soon... Dynamic data selection for neural machine translation
