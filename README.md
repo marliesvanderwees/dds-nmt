@@ -1,6 +1,6 @@
 # Dynamic Data Selection for NMT
 
-Code for applying dynamic data selection as described in [this paper][http://aclweb.org/anthology/D17-1148]
+Code for applying dynamic data selection as described in [this paper](http://aclweb.org/anthology/D17-1148)
 ```
 @inproceedings{wees2017dynamic,
   author    = {van der Wees, Marlies and Bisazza, Arianna and Monz, Christof},
@@ -15,7 +15,9 @@ Code for applying dynamic data selection as described in [this paper][http://acl
 Bilingual cross-entropy difference (CED)/Modified Moore-Lewis, as presented by 
 Axelrod et al., Domain Adaptation via Pseudo In-Domain Data Selection, 2011
 
-python scripts/rank-bitext.py --bitext_src=data/bitext.src --bitext_trg=data/bitext.trg --lm_domain_src=LM-I-SRC.blm --lm_domain_trg=LM-I-TRG.blm --lm_general_src=LM-G-SRC.blm --lm_general_trg=LM-G-TRG.blm  
+```
+python scripts/rank-bitext.py --bitext_src=data/bitext.src --bitext_trg=data/bitext.trg --lm_domain_src=LM-I-SRC.blm --lm_domain_trg=LM-I-TRG.blm --lm_general_src=LM-G-SRC.blm --lm_general_trg=LM-G-TRG.blm
+```
 
 Produces:
 - train.src and train.trg: ranked sentence pairs, most relevant sentences on top
