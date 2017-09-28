@@ -13,7 +13,7 @@ Code for applying dynamic data selection as described in [this paper](http://acl
 
 ## Ranking a bitext by relevance to a given domain
 Bilingual cross-entropy difference (CED)/Modified Moore-Lewis, as presented by 
-Axelrod et al., Domain Adaptation via Pseudo In-Domain Data Selection, 2011
+*Axelrod et al., Domain Adaptation via Pseudo In-Domain Data Selection, 2011*
 
 ```
 $ python scripts/rank-bitext.py --bitext_src=data/bitext.src --bitext_trg=data/bitext.trg --lm_domain_src=LM-I-SRC.blm --lm_domain_trg=LM-I-TRG.blm --lm_general_src=LM-G-SRC.blm --lm_general_trg=LM-G-TRG.blm
