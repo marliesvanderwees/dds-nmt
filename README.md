@@ -2,10 +2,10 @@
 
 Code for applying dynamic data selection as described in [this paper](http://aclweb.org/anthology/D17-1148)
 ```
-@inproceedings{wees2017dynamic,
+@inproceedings{vanderwees2017dynamic,
   author    = {van der Wees, Marlies and Bisazza, Arianna and Monz, Christof},
   title     = {Dynamic Data Selection for Neural Machine Translation},
-  booktitle = {Proceedings of EMNLP2017},
+  booktitle = {Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing},
   year      = {2017},
   pages     = {1411--1421}
 }
