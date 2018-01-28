@@ -1,13 +1,13 @@
 # Dynamic Data Selection for NMT
 
-Code for applying dynamic data selection as described in [this paper](http://aclweb.org/anthology/D17-1148)
+Code for applying dynamic data selection as described in [this paper](http://aclweb.org/anthology/D17-1147)
 ```
 @inproceedings{vanderwees2017dynamic,
   author    = {van der Wees, Marlies and Bisazza, Arianna and Monz, Christof},
   title     = {Dynamic Data Selection for Neural Machine Translation},
   booktitle = {Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing},
   year      = {2017},
-  pages     = {1411--1421}
+  pages     = {1400--1410}
 }
 ```
 
