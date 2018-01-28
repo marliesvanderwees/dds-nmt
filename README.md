@@ -11,6 +11,20 @@ Code for applying dynamic data selection as described in [this paper](http://acl
 }
 ```
 
+## Before applying the scripts in this repo
+Before ranking the bitext files, four language models have to be created:
+- a small in-domain LM in the source language
+- a small in-domain LM in the target language
+- a small general-domain LM in the source language
+- a small general-domain LM in the target language
+
+Note that when generating the general-domain LMs, the vocabulary is restricted to words that occur at least twice in the small in-domain corpus (following Axelrod et al.).
+
+The LMs can be for example ngram LMs (e.g. created using [SRILM](http://www.speech.sri.com/projects/srilm/)) or LSTMs (I created these using functions from [Tardis](https://github.com/ketranm/tardis)).
+
+Next, compute for each of the above the cross-entropy of each sentence in the bitext with the in-domain and general-domain LMs. Make sure that the scores are written to files with one score per line (corresponding to the sentences in the bitext). 
+
+
 ## Ranking a bitext by relevance to a given domain
 Bilingual cross-entropy difference (CED)/Modified Moore-Lewis, as presented by 
 *Axelrod et al., Domain Adaptation via Pseudo In-Domain Data Selection, 2011*
@@ -19,11 +33,12 @@ Bilingual cross-entropy difference (CED)/Modified Moore-Lewis, as presented by
 $ python scripts/rank-bitext.py --bitext_src=data/bitext.src --bitext_trg=data/bitext.trg --lm_domain_src=LM-I-SRC.blm --lm_domain_trg=LM-I-TRG.blm --lm_general_src=LM-G-SRC.blm --lm_general_trg=LM-G-TRG.blm
 ```
 Requires:
-- [SRILM](http://www.speech.sri.com/projects/srilm/) 
+- Four files with one cross-entropy score per line (see section above)
+- Plain text bitext files with one sentence per line. At least two files are expected (e.g., train.src and train.trg). Additional files with meta-info can be added as well and will be ranked according to the same criteria.
 
 Produces:
-- train.src and train.trg: ranked sentence pairs, most relevant sentences on top
-- weights.txt: CED scores, one score per line, corresponding to sentence pairs in the bitext
+- Files with ranked bitext sentences, the most domain-relevant sentences on top
+- File ```ranked-bitext.weights```: CED scores, one score per line, corresponding to sentence pairs in the bitext
 
 ## Dynamic data selection
 
