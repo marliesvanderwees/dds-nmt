@@ -30,11 +30,11 @@ Bilingual cross-entropy difference (CED)/Modified Moore-Lewis, as presented by
 *Axelrod et al., Domain Adaptation via Pseudo In-Domain Data Selection, 2011*
 
 ```
-$ python scripts/rank-bitext.py --bitext_src=data/bitext.src --bitext_trg=data/bitext.trg --lm_domain_src=LM-I-SRC.blm --lm_domain_trg=LM-I-TRG.blm --lm_general_src=LM-G-SRC.blm --lm_general_trg=LM-G-TRG.blm
+$ python scripts/rank-bitext.py --bitext_files=data/bitext.src,data/bitext.trg --src_domain_loss=LM-I-SRC.blm --trg_domain_loss=LM-I-TRG.blm --src_general_loss=LM-G-SRC.blm --trg_general_loss=LM-G-TRG.blm
 ```
 Requires:
 - Four files with one cross-entropy score per line (see section above)
-- Plain text bitext files with one sentence per line. At least two files are expected (e.g., train.src and train.trg). Additional files with meta-info can be added as well and will be ranked according to the same criteria.
+- Plain text bitext files with one sentence per line. At least two files are expected (e.g., bitext.src and bitext.trg). Additional files with for example meta-info can be added as well and will be ranked according to the same criteria.
 
 Produces:
 - Files with ranked bitext sentences, the most domain-relevant sentences on top
